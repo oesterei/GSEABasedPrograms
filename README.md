@@ -8,6 +8,7 @@
 #### 3) Generation of query gene sets - returns a .txt file similar to a .gmt (https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) that contains 4 query sets representing the most over- and under-expressed genes from each gene signature (default is 500 genes per query set)
 #### 4) GSEA between gene signatures and query gene sets - returns enrichment data (normalized scores, nominal p-values, plots) and leading-edge gene identification
 
+#### NOTE: This algorithm computes T-score per scipy.stats.ttest_ind (https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html). This algorithm does not adjust T-score values using a minimum value for σ of .2 * absolute(μ), where μ=0 is adjusted to μ=1, like performed in the GSEA desktop version (https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html).
 #### Required dependencies: numpy, pandas, scipy, and gseapy (https://gseapy.readthedocs.io/)
 
 #### Limitations of these programs include:
