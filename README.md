@@ -1,8 +1,8 @@
 ### GSEA-based Programs for NGS data
-#### This repository contains Python programs and example input files to reproduce the Gene Set Enrichment Analysis (GSEA)-based approach for gene identification and verification presented in the Park & Harris paper (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8342995/). 
+#### This repository contains Python programs and example input file(s) from publicly available NGS datasets acquired from Gene Expression Omnibus to reproduce the Gene Set Enrichment Analysis (GSEA)-based approach for gene identification and verification presented in the Park & Harris papers (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8342995/ and https://www.cscjournals.org/library/manuscriptinfo.php?mc=IJBB-262). 
 
-#### GSEAGeneID.py inputs two datasets containing clean and complete NGS data in tab-delimited .txt file format
-#### GSEAGeneID.py then performs the following:
+#### Now available!
+#### GSEA1datasetGeneIDonly.py inputs one dataset containing clean and complete NGS data in tab-delimited .txt file format then performs the following:
 #### 1) Z-score normalization of data across all samples for each gene in the dataset - returns two z-scored datasets
 #### 2) Generation of gene signatures via T-score - returns two gene lists, one per dataset, with associated T-scores and p-values
 #### 3) Generation of query gene sets - returns a .txt file similar to a .gmt (https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) that contains 4 query sets representing the most over- and under-expressed genes from each gene signature (default is 500 genes per query set)
@@ -17,3 +17,6 @@
 #### Please note that Python uses 0 for the index of the first column in a dataframe. Adjust your column counts accordingly.
 #### 3) Manual analysis of identified leading-edge genes and preparation of gene panels file, similar to .gmt format, for verification and comparison stages
 #### 4) Manual analysis to verify individual panel genes from identified leading-edge genes
+
+#### Coming soon!
+#### GSEAGeneID.py, which is similar to GSEA1datasetGeneIDonly.py except it inputs two datasets and defines one gene signature from each dataset separately rather than inputing one dataset and dividing it to generate the two gene signatures.
