@@ -2,7 +2,7 @@
 #### This repository contains Python programs and example input file(s) from publicly available NGS datasets acquired from Gene Expression Omnibus to reproduce the Gene Set Enrichment Analysis (GSEA)-based approach for gene identification and verification presented in the Park & Harris papers (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8342995/ and https://www.cscjournals.org/library/manuscriptinfo.php?mc=IJBB-262). 
 
 ### Now available!
-#### GSEA1datasetGeneIDonly.py inputs one dataset containing clean and complete NGS data in tab-delimited .txt file format
+#### GSEA1datasetGeneID.py inputs one dataset containing clean and complete NGS data in tab-delimited .txt file format
 #### GSEA2datasetsGeneID.py inputs two independent datasets containing clean and complete NGS data both in tab-delimited .txt file format
 
 #### Both GSEAGeneID programs perform the following:
@@ -23,4 +23,4 @@
 #### 4) Manual analysis to verify individual panel genes from identified leading-edge genes
 
 #### Coming soon!
-#### GSEAGeneVerify.py, which inputs an independent verification dataset and user defined query set panels and returns GSEA data.
+#### GSEAGeneVerify.py, which inputs an independent verification dataset and user defined query set panels and returns GSEA data with a random model
