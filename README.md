@@ -14,15 +14,18 @@
 #### NOTE: These algorithms compute T-score per scipy.stats.ttest_ind (https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html). This algorithm does not adjust T-score values using a minimum value for σ of .2 * absolute(μ), where μ=0 is adjusted to μ=1, like performed in the GSEA desktop version (https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html).
 
 ### Gene Verification/Comparison:
-#### GSEAItemCompare.zip inputs your identified gene panels and one dataset containing clean and complete NGS data in tab-delimited .txt file format
+#### GSEACompare.zip contains 2 Python scripts inputing your identified gene panels and one dataset containing clean and complete NGS data in tab-delimited .txt file format
 
-#### GSEAItemCompare performs the following:
+#### GSEAGeneVerify performs the following:
 ##### 1) Z-score normalization of data across all samples for each gene in the dataset
 ##### 2) Generation of gene signature via T-score - returns gene list with associated T-scores and p-values
 ##### 3) GSEA between gene signature and identified gene panels - returns enrichment data (normalized scores, nominal p-values, plots) and leading-edge gene identification
-##### 4) Generation of random query gene sets - returns a .gmt file (https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) that contains specified number (1000 default - reduce number if memory issues occur) of query sets representing randomly selected genes from the gene signature
-##### 5) GSEA between gene signature and randomly generated gene panels - returns enrichment data (normalized scores and nominal p-values only)
-##### 6) Box and whiskars plot of randomly generated normalized enrichment scores compared to achieved scores from identified gene panels
+##### 4) Generation of random query gene sets - returns a .gmt file (https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) that contains specified number (1000 default) of query sets representing randomly selected genes from the gene signature
+
+#### GSEAGeneRandom performs the following:
+##### 1) GSEA between gene signature and randomly generated gene panels - returns enrichment data (normalized scores and nominal p-values only)
+##### 2) Box and whiskars plot of randomly generated normalized enrichment scores compared to achieved scores from identified gene panels
+#### NOTE: Limiting GSEAGeneRandom to 50 random gene panels per run overcomes the memory issue
 
 #### Required dependencies: numpy, pandas, scipy, and gseapy (https://gseapy.readthedocs.io/)
 
@@ -32,6 +35,3 @@
 #### Please note that Python uses 0 for the index of the first column in a dataframe. Adjust your column counts accordingly.
 ##### 3) Manual analysis of identified leading-edge genes and preparation of gene panels file, similar to .gmt format, for verification and comparison stages
 ##### 4) Manual analysis to verify individual panel genes from identified leading-edge genes
-
-### Coming soon!
-#### GSEAPathSigGen.py, which inputs a dataset and uses it to define pathway signatures for use in identifying and verifying pathways of interest
