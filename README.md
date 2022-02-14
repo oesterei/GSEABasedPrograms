@@ -23,9 +23,8 @@
 ##### 4) Generation of random query gene sets - returns a .gmt file (https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) that contains specified number (1000 default) of query sets representing randomly selected genes from the gene signature
 
 #### GSEAGeneRandom performs the following:
-##### 1) GSEA between gene signature and randomly generated gene panels - returns enrichment data (normalized scores and nominal p-values only)
+##### 1) GSEA between gene signature and randomly generated gene panels - returns enrichment data (normalized enrichment scores only)
 ##### 2) Box and whiskars plot of randomly generated normalized enrichment scores compared to achieved scores from identified gene panels
-#### NOTE: Limiting GSEAGeneRandom to 50 random gene panels per run overcomes the memory issue
 
 #### Required dependencies: numpy, pandas, scipy, and gseapy (https://gseapy.readthedocs.io/)
 
